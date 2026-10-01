@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seis ideas para Sales Development · Grupo 2</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#190f35;--bg2:#241650;--ink:#f6f2ff;--mute:#b9aedd;--pink:#ff4d8d;--cyan:#4cc9f0;--sun:#ffd23f;--ok:#3ddc97;--bad:#ff5252;--r:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#3b1f7a55,transparent),var(--bg);color:var(--ink);font:400 17px/1.55 'DM Sans',system-ui,sans-serif;min-height:100vh}
+h1,h2,h3{font-family:'Bricolage Grotesque','DM Sans',sans-serif;line-height:1.08;margin:0 0 .5em}
+h1{font-size:clamp(2.3rem,6vw,4.4rem);font-weight:800;max-width:15ch}
+h2{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800}
+h3{font-size:1.25rem}
+p{max-width:68ch}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+nav{position:sticky;top:0;z-index:5;display:flex;gap:.5rem;align-items:center;padding:.7rem 1rem;background:#190f35ee;backdrop-filter:blur(8px);overflow-x:auto}
+.pill{border:2px solid #ffffff22;background:none;color:var(--mute);padding:.4rem .9rem;border-radius:99px;white-space:nowrap}
+.pill.on{background:var(--pink);border-color:var(--pink);color:#fff;font-weight:700}
+main{max-width:1060px;margin:0 auto;padding:2rem 1.2rem 6rem}
+.hero{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;margin-bottom:2.5rem}
+.light{display:flex;flex-direction:column;gap:12px;background:#0d0820;padding:18px;border-radius:40px;border:2px solid #ffffff22}
+.light i{width:54px;height:54px;border-radius:50%;background:#2a2150;display:block}
+.light i:nth-child(1){animation:r 4.5s infinite}.light i:nth-child(2){animation:y 4.5s infinite}.light i:nth-child(3){animation:g 4.5s infinite}
+@keyframes r{0%,30%{background:var(--bad);box-shadow:0 0 28px var(--bad)}31%,100%{background:#2a2150;box-shadow:none}}
+@keyframes y{0%,30%{background:#2a2150}31%,60%{background:var(--sun);box-shadow:0 0 28px var(--sun)}61%,100%{background:#2a2150;box-shadow:none}}
+@keyframes g{0%,60%{background:#2a2150}61%,100%{background:var(--ok);box-shadow:0 0 28px var(--ok)}}
+.cta{background:var(--sun);color:#190f35;border:0;border-radius:99px;padding:.8rem 1.6rem;font-weight:700;font-size:1.05rem}
+.ghost{background:none;color:var(--ink);border:2px solid #ffffff33;border-radius:99px;padding:.7rem 1.4rem}
+.ghost:disabled{opacity:.3;cursor:default}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.box{background:var(--bg2);border-radius:var(--r);padding:1.2rem 1.3rem}
+.box.pink{border-left:6px solid var(--pink)}.box.cyan{border-left:6px solid var(--cyan)}
+.tag{display:inline-block;background:#ffffff14;border-radius:8px;padding:.1rem .6rem;font-size:.85rem;margin:0 .3rem .3rem 0;color:var(--cyan)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1rem;margin:1.2rem 0}
+.card{text-align:left;color:var(--ink);background:var(--bg2);border:2px solid transparent;border-radius:var(--r);padding:1.1rem;transition:transform .15s,border-color .15s}
+.card:hover{transform:translateY(-3px)}
+.card[aria-pressed=true]{border-color:var(--pink);background:#33206b}
+.card b{font-family:'Bricolage Grotesque',sans-serif;font-size:1.15rem;display:block;margin:.3rem 0}
+.card small{color:var(--mute)}
+.ico{font-size:1.7rem}
+#detail{background:linear-gradient(135deg,#33206b,#241650);border-radius:var(--r);padding:1.5rem;min-height:140px}
+#detail dl{display:grid;grid-template-columns:max-content 1fr;gap:.5rem 1.2rem;margin:1rem 0 0}
+#detail dt{color:var(--sun);font-weight:700}#detail dd{margin:0}
+.demo{display:grid;grid-template-columns:240px 1fr;gap:1rem}
+.ag{display:flex;align-items:center;gap:.7rem;width:100%;text-align:left;background:var(--bg2);color:var(--ink);border:2px solid transparent;border-radius:14px;padding:.7rem .9rem;margin-bottom:.5rem}
+.ag[aria-pressed=true]{border-color:var(--cyan)}
+.dot{width:16px;height:16px;border-radius:50%;flex:none}
+.ag small{display:block;color:var(--mute)}
+#chart{width:100%;height:auto;background:#0d0820;border-radius:var(--r)}
+.ctrl{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin:1rem 0}
+input[type=range]{accent-color:var(--pink);width:220px}
+.out{background:var(--bg2);border-radius:14px;padding:1rem 1.2rem;margin-top:1rem}
+.foot{display:flex;justify-content:space-between;gap:1rem;margin-top:2.5rem}
+@media(max-width:720px){.hero,.demo{grid-template-columns:1fr}.light{flex-direction:row;justify-self:start;border-radius:30px}.light i{width:38px;height:38px}#detail dl{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<nav id="nav" aria-label="Recorrido"></nav>
+<main>
+ 
+<section class="step">
+  <div class="hero">
+    <div>
+      <h1>Seis ideas para que Sales Development llegue a tiempo</h1>
+      <p>Una aerolínea, un equipo comercial que vende a través de agencias de viajes, y demasiadas horas gastadas en Excel y pagos manuales. Este recorrido dura unos 5 minutos y termina con una demo que podés tocar.</p>
+      <button class="cta" onclick="go(1)">Empezar el recorrido</button>
+    </div>
+    <div class="light" aria-hidden="true"><i></i><i></i><i></i></div>
+  </div>
+  <div class="grid2">
+    <div class="box pink"><h3>El área</h3><p>Sales Development maximiza ingresos y optimiza costos comerciales: diseña comisiones, descuentos e incentivos para las agencias, monitorea ventas y market share, y compara contra la competencia.</p></div>
+    <div class="box pink"><h3>El dolor</h3><p>El pago de incentivos no está automatizado y consume el tiempo que los analistas deberían dedicar a analizar ventas. Los reportes IATA llegan con dos semanas de demora, y las agencias reclaman cuando los pagos tardan o llegan mal.</p></div>
+    <div class="box cyan"><h3>La hipótesis</h3><p>La IA acá funciona más como tecnología de sostenimiento que como disrupción: mejora lo que el equipo ya hace bien y libera tiempo para lo que genera ingresos. El riesgo grande sigue estando del lado de la demanda, en cómo las agencias y los canales cambian su forma de vender.</p></div>
+  </div>
+  <p class="out" style="max-width:none"><b>Para completar:</b> acá va el resultado del diagnóstico de Birkinshaw (puntaje 0–14) y qué dice sobre la exposición de la aerolínea.</p>
+</section>
+ 
+<section class="step" hidden>
+  <h2>Las seis innovaciones</h2>
+  <p>Tocá una para ver qué problema resuelve, qué tipo de innovación es y cómo crea o captura valor.</p>
+  <div class="cards" id="cards"></div>
+  <div id="detail" aria-live="polite"><p>Elegí una tarjeta para ver el detalle.</p></div>
+</section>
+ 
+<section class="step" hidden>
+  <h2>Demo: el semáforo de fuga de agencias</h2>
+  <p>Cada agencia tiene un ritmo normal de ventas, con su estacionalidad. El modelo compara las últimas 4 semanas contra lo esperado y enciende la luz cuando la caída es demasiado grande para ser ruido. Los datos son <b>sintéticos</b>, generados para esta demo.</p>
+  <div class="ctrl">
+    <label>Fuga de Tour Pampa: <b id="leakv">12%</b> <input id="leak" type="range" min="0" max="30" value="12" aria-label="Porcentaje de fuga"></label>
+    <button class="ghost" id="reroll">Regenerar ruido</button>
+  </div>
+  <div class="demo">
+    <div id="list"></div>
+    <div><svg id="chart" viewBox="0 0 700 280" role="img" aria-label="Ventas semanales contra lo esperado"></svg><div class="out" id="read"></div></div>
+  </div>
+</section>
+ 
+<section class="step" hidden>
+  <h2>Qué puso la IA y qué puso el equipo</h2>
+  <div class="grid2">
+    <div class="box cyan"><h3>La IA ayudó a</h3><p>Ordenar ideas, proponer arquitecturas (RAG, clustering, series temporales) y armar borradores y prototipos rápido.</p></div>
+    <div class="box pink"><h3>El equipo aportó</h3><p>El conocimiento del día a día: cómo se liquidan los incentivos, por qué falla el proveedor con escalas y stopovers, el delay de dos semanas de IATA y lo difícil que es aprender los comandos de Sabre. Una respuesta genérica no tiene nada de eso.</p></div>
+  </div>
+  <p class="out" style="max-width:none"><b>Para completar:</b> hoja de ruta (qué probar primero y cómo medirlo) y lo que haría falta para ejecutarlo.</p>
+</section>
+ 
+<div class="foot"><button class="ghost" id="prev">← Anterior</button><button class="cta" id="next">Siguiente →</button></div>
+</main>
+ 
+<script>
+const names=['Inicio','Las seis ideas','Demo','Cierre'];
+const nav=document.getElementById('nav');
+names.forEach((n,i)=>{const b=document.createElement('button');b.className='pill';b.textContent=n;b.onclick=()=>go(i);nav.appendChild(b)});
+let cur=0;
+function go(n){
+  cur=(n+4)%4;
+  document.querySelectorAll('.step').forEach((s,i)=>s.hidden=i!==cur);
+  document.querySelectorAll('.pill').forEach((p,i)=>p.classList.toggle('on',i===cur));
+  prev.disabled=cur===0;
+  next.textContent=cur===3?'Volver al inicio':'Siguiente →';
+  next.onclick=()=>go(cur===3?0:cur+1);
+  window.scrollTo(0,0);
+  if(cur===2)draw();
+}
+const prev=document.getElementById('prev'),next=document.getElementById('next');
+prev.onclick=()=>go(cur-1);
+document.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT')return;if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft'&&cur>0)go(cur-1)});
+ 
+/* ---- Mapa de innovaciones (clasificación propuesta, ajustable) ---- */
+const inn=[
+{i:'🧩',t:'Clusterización de agencias y recomendador de incentivos',p:'Las agencias cambian de negocio y la base no lo refleja; el incentivo deja de responder.',s:'Un modelo lee el perfil histórico de ventas, detecta el segmento real y sugiere el incentivo que más motiva a cada agencia.',tipo:'Proceso + marketing (nuevo método de incentivos)',val:'Baja el costo comercial: cada incentivo llega a quien responde.',gap:'Clustering sobre historial de ventas y modelos de respuesta a incentivos.',amb:'Adyacente'},
+{i:'💬',t:'SabreGPT',p:'Los comandos de Sabre se aprenden en años y los chatbots genéricos fallan con ellos.',s:'Chatbot con RAG sobre el manual de Sabre, temperatura baja, que devuelve el comando y la página o sección de origen.',tipo:'Proceso + organizacional (conocimiento accesible)',val:'Baja el costo de tiempo del analista y acorta la curva de aprendizaje.',gap:'RAG sobre documentación técnica con trazabilidad de la fuente.',amb:'Núcleo'},
+{i:'🎛️',t:'Simulador predictivo de escenarios comerciales',p:'Las proyecciones de un incentivo se arman a mano en muchas hojas de Excel y salen imprecisas.',s:'Herramienta interactiva con modelos de elasticidad que estima tickets incrementales, costo proyectado y ROI en tiempo real.',tipo:'Proceso + marketing (tarificación e incentivos)',val:'Mejora el retorno de cada incentivo antes de gastarlo.',gap:'Modelos de elasticidad por agencia, con estacionalidad y costos.',amb:'Adyacente'},
+{i:'🧾',t:'Conciliación automática de pagos de comisiones',p:'Calcular, validar y pagar incentivos es manual, lento y propenso a discrepancias.',s:'Sistema que cruza contratos y reportes de ventas, detecta errores de cálculo, gestiona aprobaciones y genera las órdenes de pago.',tipo:'Proceso (con cambio organizacional)',val:'Baja el costo operativo y sube la confianza de las agencias.',gap:'Reglas de validación, flujo de aprobaciones y trazabilidad de auditoría.',amb:'Núcleo'},
+{i:'🚦',t:'Semáforo de pérdida de ventas en agencias',p:'La fuga hacia la competencia se ve en IATA cuando ya pasaron semanas.',s:'Modelo de series temporales que aprende el ritmo normal de cada agencia y alerta ante caídas sutiles, ajustadas por estacionalidad.',tipo:'Proceso + marketing (retención proactiva)',val:'Captura valor al retener volumen antes de perderlo.',gap:'Detección de anomalías sobre datos propios, sin esperar al reporte externo.',amb:'Adyacente'},
+{i:'✈️',t:'Validador de itinerarios y conexiones',p:'El proveedor de pagos automáticos confunde escalas con destinos y rechaza incentivos que sí corresponden.',s:'Validador que analiza el itinerario y la secuencia de cupones para distinguir conexión de stopover y corregir la lectura del sistema.',tipo:'Proceso (componente de un sistema existente)',val:'Reduce reclamos y revisiones manuales; mejora la relación con las agencias.',gap:'Reglas de itinerario y datos de cupones de los tickets emitidos.',amb:'Núcleo'}
+];
+const cards=document.getElementById('cards'),detail=document.getElementById('detail');
+inn.forEach((x,k)=>{
+  const b=document.createElement('button');b.className='card';b.setAttribute('aria-pressed','false');
+  b.innerHTML=`<span class="ico">${x.i}</span><b>${x.t}</b><small>${x.tipo}</small>`;
+  b.onclick=()=>{
+    cards.querySelectorAll('.card').forEach(c=>c.setAttribute('aria-pressed','false'));
+    b.setAttribute('aria-pressed','true');
+    detail.innerHTML=`<h3>${x.i} ${x.t}</h3><span class="tag">Ambición: ${x.amb}</span><dl><dt>Problema</dt><dd>${x.p}</dd><dt>Solución</dt><dd>${x.s}</dd><dt>Tipo</dt><dd>${x.tipo}</dd><dt>Valor</dt><dd>${x.val}</dd><dt>Capacidad clave</dt><dd>${x.gap}</dd></dl>`;
+  };
+  cards.appendChild(b);
+});
+ 
+/* ---- Demo semáforo con datos sintéticos ---- */
+const W=52,TRAIN=40,LEAKAG=2;
+const AG=[{n:'Andes Corporate',s:'Corporativa',b:420},{n:'ViajaYa OTA',s:'OTA',b:610},{n:'Tour Pampa',s:'Tour operadora',b:300},{n:'Consolidadora Sur',s:'Consolidadora',b:880},{n:'Retail Centro',s:'Retail',b:250}];
+let seed=7,sel=LEAKAG,data=[];
+function rng(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const season=w=>1+.25*Math.sin(2*Math.PI*(w-8)/52)+.12*Math.sin(4*Math.PI*w/52);
+const gauss=r=>Math.sqrt(-2*Math.log(r()+1e-9))*Math.cos(2*Math.PI*r());
+function build(){
+  const leak=+document.getElementById('leak').value/100,r=rng(seed);
+  data=AG.map((a,k)=>{
+    const y=[];
+    for(let w=0;w<W;w++){
+      let f=1+.06*gauss(r);
+      if(k===LEAKAG&&w>=44)f*=1-leak*(w-43)/8;
+      y.push(a.b*season(w)*f);
+    }
+    const base=y.slice(0,TRAIN).reduce((s,v,w)=>s+v/season(w),0)/TRAIN;
+    const exp=y.map((_,w)=>base*season(w));
+    const res=y.map((v,w)=>v/exp[w]-1);
+    const tr=res.slice(0,TRAIN),m=tr.reduce((s,v)=>s+v,0)/TRAIN;
+    const sd=Math.sqrt(tr.reduce((s,v)=>s+(v-m)**2,0)/TRAIN);
+    const z=w=>(res.slice(w-3,w+1).reduce((s,v)=>s+v,0)/4)/(sd/2);
+    let alert=-1;for(let w=TRAIN;w<W;w++){if(z(w)<-2){alert=w;break}}
+    const zl=z(W-1);
+    return{y,exp,sd,zl,alert,color:zl<-3.5?'var(--bad)':zl<-2?'var(--sun)':'var(--ok)',label:zl<-3.5?'Rojo':zl<-2?'Amarillo':'Verde'};
+  });
+}
+function list(){
+  const L=document.getElementById('list');L.innerHTML='';
+  AG.forEach((a,k)=>{
+    const b=document.createElement('button');b.className='ag';b.setAttribute('aria-pressed',k===sel);
+    b.innerHTML=`<span class="dot" style="background:${data[k].color}"></span><span><b>${a.n}</b><small>${a.s} · ${data[k].label}</small></span>`;
+    b.onclick=()=>{sel=k;draw()};L.appendChild(b);
+  });
+}
+function draw(){
+  build();list();
+  const d=data[sel],mx=Math.max(...d.y,...d.exp)*1.1,X=w=>40+w*(640/(W-1)),Y=v=>250-v/mx*230;
+  const pl=a=>a.map((v,w)=>X(w)+','+Y(v)).join(' ');
+  const hi=d.exp.map((v,w)=>[X(w),Y(v*(1+2*d.sd))]),lo=d.exp.map((v,w)=>[X(w),Y(v*(1-2*d.sd))]).reverse();
+  const band=[...hi,...lo].map(p=>p.join(',')).join(' ');
+  let s=`<polygon points="${band}" fill="#4cc9f022"/><polyline points="${pl(d.exp)}" fill="none" stroke="#4cc9f0" stroke-width="2" stroke-dasharray="5 4"/><polyline points="${pl(d.y)}" fill="none" stroke="#f6f2ff" stroke-width="2.5"/><line x1="${X(TRAIN)}" x2="${X(TRAIN)}" y1="10" y2="250" stroke="#ffffff44" stroke-dasharray="3 4"/><text x="${X(TRAIN)+6}" y="24" fill="#b9aedd" font-size="12">desde acá se vigila</text>`;
+  if(d.alert>=0)s+=`<line x1="${X(d.alert)}" x2="${X(d.alert)}" y1="10" y2="250" stroke="#ffd23f" stroke-width="2"/><circle cx="${X(d.alert)}" cy="${Y(d.y[d.alert])}" r="6" fill="#ffd23f"/>`;
+  s+=`<text x="40" y="272" fill="#b9aedd" font-size="12">semana 1</text><text x="640" y="272" fill="#b9aedd" font-size="12">semana 52</text>`;
+  document.getElementById('chart').innerHTML=s;
+  document.getElementById('read').innerHTML=`<b>${AG[sel].n}</b> (${AG[sel].s}): ${d.alert>=0?`el semáforo se enciende en la <b>semana ${d.alert+1}</b>. El reporte IATA recién lo mostraría alrededor de la semana ${d.alert+3}, así que el equipo ganaría unas dos semanas para actuar.`:'ventas dentro del rango esperado; el semáforo sigue en verde.'} La línea punteada es lo esperado según su estacionalidad y la franja cubre el rango normal.`;
+}
+document.getElementById('leak').oninput=e=>{document.getElementById('leakv').textContent=e.target.value+'%';if(cur===2)draw()};
+document.getElementById('reroll').onclick=()=>{seed=Math.floor(Math.random()*1e6);draw()};
+go(0);
+</script>
+</body>
+</html>
+ 
