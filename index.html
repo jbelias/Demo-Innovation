@@ -55,6 +55,11 @@ main{max-width:1060px;margin:0 auto;padding:2rem 1.2rem 6rem}
 input[type=range]{accent-color:var(--pink);width:220px}
 .out{background:var(--bg2);border-radius:14px;padding:1rem 1.2rem;margin-top:1rem}
 .foot{display:flex;justify-content:space-between;gap:1rem;margin-top:2.5rem}
+.meter{background:#ffffff1c;border-radius:99px;height:12px;margin:.6rem 0 .8rem;overflow:hidden}.meter i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--sun));border-radius:99px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.8rem;margin-top:1rem}.kpi{background:var(--bg2);border-radius:14px;padding:.9rem 1rem}.kpi b{display:block;font:800 1.5rem 'Bricolage Grotesque',sans-serif}.kpi span{color:var(--mute);font-size:.9rem}
+.sl{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem 1.5rem;margin:1rem 0}.sl label{display:block}.sl input{width:100%}
+#net{width:100%;height:auto;background:#0d0820;border-radius:var(--r)}#net g{cursor:pointer}#net g:focus-visible rect,#net g:hover rect{stroke:#fff;stroke-width:3}
+ol.road{padding-left:1.3rem}ol.road li{margin-bottom:.6rem}
 @media(max-width:720px){.hero,.demo{grid-template-columns:1fr}.light{flex-direction:row;justify-self:start;border-radius:30px}.light i{width:38px;height:38px}#detail dl{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -77,7 +82,7 @@ input[type=range]{accent-color:var(--pink);width:220px}
     <div class="box pink"><h3>El dolor</h3><p>El pago de incentivos no está automatizado y consume el tiempo que los analistas deberían dedicar a analizar ventas. Los reportes IATA llegan con dos semanas de demora, y las agencias reclaman cuando los pagos tardan o llegan mal.</p></div>
     <div class="box cyan"><h3>La hipótesis</h3><p>La IA acá funciona más como tecnología de sostenimiento que como disrupción: mejora lo que el equipo ya hace bien y libera tiempo para lo que genera ingresos. El riesgo grande sigue estando del lado de la demanda, en cómo las agencias y los canales cambian su forma de vender.</p></div>
   </div>
-  <p class="out" style="max-width:none"><b>Para completar:</b> acá va el resultado del diagnóstico de Birkinshaw (puntaje 0–14) y qué dice sobre la exposición de la aerolínea.</p>
+  <div class="box cyan" style="margin-top:1rem"><h3>Diagnóstico de Birkinshaw: 8 de 14</h3><div class="meter" role="img" aria-label="8 de 14"><i style="width:57%"></i></div><p>Riesgo de disrupción medio. Cuadrante 2, Transformación operacional: alto efecto del lado de la oferta y bajo del lado de la demanda. La IA cambia sobre todo cómo trabaja el equipo, más que cómo compran las agencias.</p></div>
 </section>
  
 <section class="step" hidden>
@@ -101,31 +106,53 @@ input[type=range]{accent-color:var(--pink);width:220px}
 </section>
  
 <section class="step" hidden>
+  <h2>Demo: simulador de escenarios de incentivos</h2>
+  <p>Mové los sliders y mirá cómo cambian tickets incrementales, costo y retorno de un incentivo en una ruta con baja ocupación. Es un modelo <b>ilustrativo</b> con rendimientos decrecientes: más incentivo no siempre rinde más.</p>
+  <div class="sl">
+    <label>Incentivo por ticket: <b id="incv"></b><input id="inc" type="range" min="1" max="10" value="4"></label>
+    <label>Duración: <b id="durv"></b><input id="dur" type="range" min="4" max="16" value="8"></label>
+    <label>Agencias alcanzadas: <b id="reachv"></b><input id="reach" type="range" min="10" max="100" value="60"></label>
+    <label>Ocupación base de la ruta: <b id="occv"></b><input id="occ" type="range" min="50" max="85" value="70"></label>
+    <label>Sensibilidad de las agencias: <b id="elv"></b><input id="el" type="range" min="5" max="40" value="25"></label>
+  </div>
+  <div class="kpis" id="kpis"></div>
+  <p class="out" style="max-width:none" id="simnote"></p>
+</section>
+ 
+<section class="step" hidden>
+  <h2>Red team con agentes</h2>
+  <p>Antes de decidir, cada propuesta pasa por una red de agentes de IA con roles distintos que la cuestionan. Al final, quien decide es el equipo. Tocá un nodo para ver su rol.</p>
+  <svg id="net" viewBox="0 0 760 400" role="img" aria-label="Red de agentes: generador, cuatro evaluadores, sintetizador y equipo humano"></svg>
+  <div class="out" id="netinfo">Tocá un nodo.</div>
+</section>
+ 
+<section class="step" hidden>
   <h2>Qué puso la IA y qué puso el equipo</h2>
   <div class="grid2">
     <div class="box cyan"><h3>La IA ayudó a</h3><p>Ordenar ideas, proponer arquitecturas (RAG, clustering, series temporales) y armar borradores y prototipos rápido.</p></div>
     <div class="box pink"><h3>El equipo aportó</h3><p>El conocimiento del día a día: cómo se liquidan los incentivos, por qué falla el proveedor con escalas y stopovers, el delay de dos semanas de IATA y lo difícil que es aprender los comandos de Sabre. Una respuesta genérica no tiene nada de eso.</p></div>
   </div>
-  <p class="out" style="max-width:none"><b>Para completar:</b> hoja de ruta (qué probar primero y cómo medirlo) y lo que haría falta para ejecutarlo.</p>
+  <div class="box" style="margin-top:1rem"><h3>Hacia dónde seguir</h3><ol class="road"><li><b>Rediseñar los procesos internos de punta a punta:</b> automatizar la liquidación y el pago de incentivos, dejando las aprobaciones que exige la auditoría.</li><li><b>Construir bases de conocimiento propias y cerradas:</b> manual de Sabre, contratos e historial de ventas, para que lo que sabe el equipo no se vuelva un commodity.</li><li><b>Capacitar al equipo en prompt engineering avanzado:</b> para que los analistas consulten, analicen y simulen más rápido con estas herramientas.</li></ol></div>
 </section>
  
 <div class="foot"><button class="ghost" id="prev">← Anterior</button><button class="cta" id="next">Siguiente →</button></div>
 </main>
  
 <script>
-const names=['Inicio','Las seis ideas','Demo','Cierre'];
+const names=['Inicio','Las seis ideas','Semáforo','Simulador','Red team','Cierre'],N=names.length;
 const nav=document.getElementById('nav');
 names.forEach((n,i)=>{const b=document.createElement('button');b.className='pill';b.textContent=n;b.onclick=()=>go(i);nav.appendChild(b)});
 let cur=0;
 function go(n){
-  cur=(n+4)%4;
+  cur=(n+N)%N;
   document.querySelectorAll('.step').forEach((s,i)=>s.hidden=i!==cur);
   document.querySelectorAll('.pill').forEach((p,i)=>p.classList.toggle('on',i===cur));
   prev.disabled=cur===0;
-  next.textContent=cur===3?'Volver al inicio':'Siguiente →';
-  next.onclick=()=>go(cur===3?0:cur+1);
+  next.textContent=cur===N-1?'Volver al inicio':'Siguiente →';
+  next.onclick=()=>go(cur===N-1?0:cur+1);
   window.scrollTo(0,0);
   if(cur===2)draw();
+  if(cur===3)sim();
 }
 const prev=document.getElementById('prev'),next=document.getElementById('next');
 prev.onclick=()=>go(cur-1);
@@ -147,7 +174,7 @@ inn.forEach((x,k)=>{
   b.onclick=()=>{
     cards.querySelectorAll('.card').forEach(c=>c.setAttribute('aria-pressed','false'));
     b.setAttribute('aria-pressed','true');
-    detail.innerHTML=`<h3>${x.i} ${x.t}</h3><span class="tag">Ambición: ${x.amb}</span><dl><dt>Problema</dt><dd>${x.p}</dd><dt>Solución</dt><dd>${x.s}</dd><dt>Tipo</dt><dd>${x.tipo}</dd><dt>Valor</dt><dd>${x.val}</dd><dt>Capacidad clave</dt><dd>${x.gap}</dd></dl>`;
+    detail.innerHTML=`<h3>${x.i} ${x.t}</h3><span class="tag">Cuadrante 2: Transformación operacional</span><span class="tag">Ambición: ${x.amb}</span><dl><dt>Problema</dt><dd>${x.p}</dd><dt>Solución</dt><dd>${x.s}</dd><dt>Tipo</dt><dd>${x.tipo}</dd><dt>Valor</dt><dd>${x.val}</dd><dt>Capacidad clave</dt><dd>${x.gap}</dd></dl>`;
   };
   cards.appendChild(b);
 });
@@ -201,6 +228,35 @@ function draw(){
 }
 document.getElementById('leak').oninput=e=>{document.getElementById('leakv').textContent=e.target.value+'%';if(cur===2)draw()};
 document.getElementById('reroll').onclick=()=>{seed=Math.floor(Math.random()*1e6);draw()};
+/* ---- Simulador ---- */
+function sim(){
+  const v=id=>+document.getElementById(id).value,set=(id,t)=>document.getElementById(id).textContent=t;
+  const i=v('inc')/100,dur=v('dur'),rc=v('reach')/100,oc=v('occ')/100,E=v('el')/10;
+  set('incv',v('inc')+'%');set('durv',dur+' semanas');set('reachv',v('reach')+'%');set('occv',v('occ')+'%');set('elv',E.toFixed(1));
+  const CAP=1260,FARE=450,base=CAP*oc*.45*rc,room=CAP*(1-oc);
+  const lift=E*i*Math.max(0,1-i/.12),raw=base*lift,inc=Math.min(raw,room);
+  const cost=FARE*i*(base+inc)*dur,rev=inc*FARE*dur,net=rev-cost,roi=net/cost;
+  const f=n=>'USD '+Math.round(n).toLocaleString('es-AR');
+  const col=net>=0?'var(--ok)':'var(--bad)';
+  document.getElementById('kpis').innerHTML=`<div class="kpi"><b>${Math.round(inc*dur).toLocaleString('es-AR')}</b><span>tickets incrementales</span></div><div class="kpi"><b>${f(cost)}</b><span>costo del incentivo</span></div><div class="kpi"><b>${f(rev)}</b><span>ingreso incremental</span></div><div class="kpi"><b style="color:${col}">${f(net)}</b><span>resultado neto</span></div><div class="kpi"><b style="color:${col}">${Math.round(roi*100)}%</b><span>ROI</span></div>`;
+  document.getElementById('simnote').innerHTML=(raw>room?'<b>La ruta se llena:</b> la demanda extra supera los asientos libres, así que el resto del incentivo se paga sin traer más pasajeros. ':'')+'Supuestos ilustrativos: 180 asientos por vuelo, 7 vuelos por semana, tarifa de USD 450 y 45% de venta por agencias. El incentivo se paga sobre todos los tickets de las agencias alcanzadas, no solo sobre los incrementales.';
+}
+['inc','dur','reach','occ','el'].forEach(id=>document.getElementById(id).oninput=sim);
+ 
+/* ---- Red de agentes ---- */
+const AGT={gen:['IA generadora','Propone variantes de cada innovación y deja explícitos sus supuestos.','#4cc9f0'],cfo:['Agente CFO','Pregunta cuánto cuesta, cuándo se repaga y qué pasa si las agencias reaccionan menos de lo esperado.','#ff4d8d'],aud:['Agente Auditoría','Pregunta si cada pago de incentivo deja trazabilidad y pasa por las aprobaciones correspondientes.','#ff4d8d'],ag:['Agente Agencia','Se pone en el lugar de la agencia: ¿entiende el incentivo y confía en que se paga bien y a tiempo?','#ff4d8d'],an:['Agente Analista SD','Pregunta si la idea ahorra horas reales o suma una herramienta más para mantener.','#ff4d8d'],syn:['IA sintetizadora','Junta las objeciones, marca las que se repiten y ordena las propuestas por riesgo y valor.','#ffd23f'],team:['Equipo (criterio humano)','Decide qué se prioriza usando lo que la IA no tiene: conocimiento del negocio, del proveedor y de las agencias.','#3ddc97']};
+const POS={gen:[85,200],cfo:[295,55],aud:[295,145],ag:[295,235],an:[295,325],syn:[500,200],team:[675,200]};
+const net=document.getElementById('net');
+let h='<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b9aedd"/></marker></defs>';
+const ln=(a,b,d)=>`<path d="M${a[0]},${a[1]} C${(a[0]+b[0])/2},${a[1]} ${(a[0]+b[0])/2},${b[1]} ${b[0]},${b[1]}" fill="none" stroke="#b9aedd" stroke-width="1.8" marker-end="url(#ar)"/>`;
+['cfo','aud','ag','an'].forEach(k=>{h+=ln([150,200],[220,POS[k][1]])+ln([370,POS[k][1]],[435,200])});
+h+=ln([565,200],[610,200]);
+h+='<path d="M675,232 C675,440 85,440 85,232" fill="none" stroke="#ffd23f" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#ar)"/><text x="380" y="385" fill="#ffd23f" font-size="14" text-anchor="middle">ajustamos y volvemos a correr</text>';
+Object.keys(AGT).forEach(k=>{const [x,y]=POS[k],w=k==='cfo'||k==='aud'||k==='ag'||k==='an'?150:130,t=AGT[k][0].split(' (')[0];
+  h+=`<g tabindex="0" role="button" data-k="${k}"><rect x="${x-w/2}" y="${y-30}" width="${w}" height="60" rx="14" fill="${AGT[k][2]}"/><text x="${x}" y="${y+5}" text-anchor="middle" font-size="14" font-weight="700" fill="#190f35">${t}</text></g>`});
+net.innerHTML=h;
+const show=k=>{document.getElementById('netinfo').innerHTML='<b>'+AGT[k][0]+':</b> '+AGT[k][1]};
+net.querySelectorAll('g').forEach(g=>{g.onclick=()=>show(g.dataset.k);g.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show(g.dataset.k)}}});
 go(0);
 </script>
 </body>
