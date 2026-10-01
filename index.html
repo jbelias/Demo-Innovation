@@ -9,7 +9,7 @@
 :root{--bg:#190f35;--bg2:#241650;--ink:#f6f2ff;--mute:#b9aedd;--pink:#ff4d8d;--cyan:#4cc9f0;--sun:#ffd23f;--ok:#3ddc97;--bad:#ff5252;--r:18px}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#3b1f7a55,transparent),var(--bg);color:var(--ink);font:400 17px/1.55 'DM Sans',system-ui,sans-serif;min-height:100vh}
+body{margin:0;background:linear-gradient(180deg,#0a1535 0%,#1d1a52 40%,#4a2468 72%,#a8426b 90%,#ff8a5b 100%) fixed,var(--bg);color:var(--ink);font:400 17px/1.55 'DM Sans',system-ui,sans-serif;min-height:100vh}
 h1,h2,h3{font-family:'Bricolage Grotesque','DM Sans',sans-serif;line-height:1.08;margin:0 0 .5em}
 h1{font-size:clamp(2.3rem,6vw,4.4rem);font-weight:800;max-width:15ch}
 h2{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800}
@@ -60,20 +60,45 @@ input[type=range]{accent-color:var(--pink);width:220px}
 .sl{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem 1.5rem;margin:1rem 0}.sl label{display:block}.sl input{width:100%}
 #net{width:100%;height:auto;background:#0d0820;border-radius:var(--r)}#net g{cursor:pointer}#net g:focus-visible rect,#net g:hover rect{stroke:#fff;stroke-width:3}
 ol.road{padding-left:1.3rem}ol.road li{margin-bottom:.6rem}
+.sky{position:fixed;inset:0;overflow:hidden;z-index:0;pointer-events:none}
+.plane{position:absolute;left:0;color:#fff;animation:fly var(--d) linear infinite;animation-delay:var(--w)}
+.plane .in{position:relative;width:var(--s)}
+.plane svg{display:block;width:var(--s);height:var(--s)}
+.plane .in::before{content:"";position:absolute;right:70%;top:50%;width:260px;height:2px;background:linear-gradient(90deg,transparent,#ffffff99)}
+.plane.rev{animation-name:flyr}.plane.rev .in{transform:scaleX(-1)}
+@keyframes fly{from{transform:translateX(-25vw)}to{transform:translateX(120vw)}}
+@keyframes flyr{from{transform:translateX(120vw)}to{transform:translateX(-25vw)}}
+.cloud{position:absolute;width:420px;height:110px;border-radius:50%;background:#ffffff14;filter:blur(30px);animation:drift var(--d) linear infinite;animation-delay:var(--w)}
+@keyframes drift{from{transform:translateX(-30vw)}to{transform:translateX(130vw)}}
+main{position:relative;z-index:1}
+.brand{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;color:var(--sun);margin-right:.6rem;white-space:nowrap}
+.card small{display:block;margin-top:.7rem;padding-top:.7rem;border-top:2px dashed #ffffff33}
+@media(prefers-reduced-motion:reduce){.sky{display:none}}
 @media(max-width:720px){.hero,.demo{grid-template-columns:1fr}.light{flex-direction:row;justify-self:start;border-radius:30px}.light i{width:38px;height:38px}#detail dl{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<nav id="nav" aria-label="Recorrido"></nav>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="pl" viewBox="0 0 64 64"><path d="M62 32c0-2-3-3-6-3H40L26 8h-6l7 21H12l-5-7H3l3 10-3 10h4l5-7h15l-7 21h6l14-21h16c3 0 6-1 6-3z" fill="currentColor"/></symbol></svg>
+<div class="sky" aria-hidden="true">
+<div class="cloud" style="top:8%;--d:120s;--w:-30s"></div><div class="cloud" style="top:55%;--d:150s;--w:-90s"></div>
+<div class="plane" style="top:12%;--s:56px;--d:24s;--w:0s;opacity:.4"><div class="in"><svg viewBox="0 0 64 64"><use href="#pl"/></svg></div></div>
+<div class="plane rev" style="top:38%;--s:34px;--d:36s;--w:-14s;opacity:.25"><div class="in"><svg viewBox="0 0 64 64"><use href="#pl"/></svg></div></div>
+<div class="plane" style="top:64%;--s:72px;--d:30s;--w:-6s;opacity:.32"><div class="in"><svg viewBox="0 0 64 64"><use href="#pl"/></svg></div></div>
+<div class="plane rev" style="top:82%;--s:28px;--d:45s;--w:-22s;opacity:.22"><div class="in"><svg viewBox="0 0 64 64"><use href="#pl"/></svg></div></div>
+<div class="plane" style="top:25%;--s:44px;--d:28s;--w:-12s;opacity:.3"><div class="in"><svg viewBox="0 0 64 64"><use href="#pl"/></svg></div></div>
+<div class="plane rev" style="top:72%;--s:40px;--d:33s;--w:-18s;opacity:.26"><div class="in"><svg viewBox="0 0 64 64"><use href="#pl"/></svg></div></div>
+</div>
+<nav id="nav" aria-label="Recorrido"><span class="brand">✈ Grupo 2 - MIM OBA</span></nav>
 <main>
- 
+
 <section class="step">
   <div class="hero">
     <div>
       <h1>Seis ideas para que Sales Development llegue a tiempo</h1>
-      <p>Una aerolínea, un equipo comercial que vende a través de agencias de viajes, y demasiadas horas gastadas en Excel y pagos manuales. Este recorrido dura unos 5 minutos y termina con una demo que podés tocar.</p>
-      <button class="cta" onclick="go(1)">Empezar el recorrido</button>
+      <p>Una aerolínea, un equipo comercial que vende a través de agencias de viajes, y demasiadas horas gastadas en Excel y pagos manuales. Este vuelo dura unos 5 minutos, pasa por dos demos que podés tocar y aterriza en una hoja de ruta.</p>
+      <h3>Bongiovanni · Cervetto · Elias · Torres</h3>
+      <button class="cta" onclick="go(1)">Embarcar</button>
     </div>
     <div class="light" aria-hidden="true"><i></i><i></i><i></i></div>
   </div>
@@ -84,14 +109,14 @@ ol.road{padding-left:1.3rem}ol.road li{margin-bottom:.6rem}
   </div>
   <div class="box cyan" style="margin-top:1rem"><h3>Diagnóstico de Birkinshaw: 8 de 14</h3><div class="meter" role="img" aria-label="8 de 14"><i style="width:57%"></i></div><p>Riesgo de disrupción medio. Cuadrante 2, Transformación operacional: alto efecto del lado de la oferta y bajo del lado de la demanda. La IA cambia sobre todo cómo trabaja el equipo, más que cómo compran las agencias.</p></div>
 </section>
- 
+
 <section class="step" hidden>
   <h2>Las seis innovaciones</h2>
   <p>Tocá una para ver qué problema resuelve, qué tipo de innovación es y cómo crea o captura valor.</p>
   <div class="cards" id="cards"></div>
   <div id="detail" aria-live="polite"><p>Elegí una tarjeta para ver el detalle.</p></div>
 </section>
- 
+
 <section class="step" hidden>
   <h2>Demo: el semáforo de fuga de agencias</h2>
   <p>Cada agencia tiene un ritmo normal de ventas, con su estacionalidad. El modelo compara las últimas 4 semanas contra lo esperado y enciende la luz cuando la caída es demasiado grande para ser ruido. Los datos son <b>sintéticos</b>, generados para esta demo.</p>
@@ -104,7 +129,7 @@ ol.road{padding-left:1.3rem}ol.road li{margin-bottom:.6rem}
     <div><svg id="chart" viewBox="0 0 700 280" role="img" aria-label="Ventas semanales contra lo esperado"></svg><div class="out" id="read"></div></div>
   </div>
 </section>
- 
+
 <section class="step" hidden>
   <h2>Demo: simulador de escenarios de incentivos</h2>
   <p>Mové los sliders y mirá cómo cambian tickets incrementales, costo y retorno de un incentivo en una ruta con baja ocupación. Es un modelo <b>ilustrativo</b> con rendimientos decrecientes: más incentivo no siempre rinde más.</p>
@@ -118,14 +143,14 @@ ol.road{padding-left:1.3rem}ol.road li{margin-bottom:.6rem}
   <div class="kpis" id="kpis"></div>
   <p class="out" style="max-width:none" id="simnote"></p>
 </section>
- 
+
 <section class="step" hidden>
   <h2>Red team con agentes</h2>
   <p>Antes de decidir, cada propuesta pasa por una red de agentes de IA con roles distintos que la cuestionan. Al final, quien decide es el equipo. Tocá un nodo para ver su rol.</p>
   <svg id="net" viewBox="0 0 760 400" role="img" aria-label="Red de agentes: generador, cuatro evaluadores, sintetizador y equipo humano"></svg>
   <div class="out" id="netinfo">Tocá un nodo.</div>
 </section>
- 
+
 <section class="step" hidden>
   <h2>Qué puso la IA y qué puso el equipo</h2>
   <div class="grid2">
@@ -134,12 +159,12 @@ ol.road{padding-left:1.3rem}ol.road li{margin-bottom:.6rem}
   </div>
   <div class="box" style="margin-top:1rem"><h3>Hacia dónde seguir</h3><ol class="road"><li><b>Rediseñar los procesos internos de punta a punta:</b> automatizar la liquidación y el pago de incentivos, dejando las aprobaciones que exige la auditoría.</li><li><b>Construir bases de conocimiento propias y cerradas:</b> manual de Sabre, contratos e historial de ventas, para que lo que sabe el equipo no se vuelva un commodity.</li><li><b>Capacitar al equipo en prompt engineering avanzado:</b> para que los analistas consulten, analicen y simulen más rápido con estas herramientas.</li></ol></div>
 </section>
- 
+
 <div class="foot"><button class="ghost" id="prev">← Anterior</button><button class="cta" id="next">Siguiente →</button></div>
 </main>
- 
+
 <script>
-const names=['Inicio','Las seis ideas','Semáforo','Simulador','Red team','Cierre'],N=names.length;
+const names=['Embarque','Las seis ideas','Semáforo','Simulador','Red team','Aterrizaje'],N=names.length;
 const nav=document.getElementById('nav');
 names.forEach((n,i)=>{const b=document.createElement('button');b.className='pill';b.textContent=n;b.onclick=()=>go(i);nav.appendChild(b)});
 let cur=0;
@@ -157,7 +182,7 @@ function go(n){
 const prev=document.getElementById('prev'),next=document.getElementById('next');
 prev.onclick=()=>go(cur-1);
 document.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT')return;if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft'&&cur>0)go(cur-1)});
- 
+
 /* ---- Mapa de innovaciones (clasificación propuesta, ajustable) ---- */
 const inn=[
 {i:'🧩',t:'Clusterización de agencias y recomendador de incentivos',p:'Las agencias cambian de negocio y la base no lo refleja; el incentivo deja de responder.',s:'Un modelo lee el perfil histórico de ventas, detecta el segmento real y sugiere el incentivo que más motiva a cada agencia.',tipo:'Proceso + marketing (nuevo método de incentivos)',val:'Baja el costo comercial: cada incentivo llega a quien responde.',gap:'Clustering sobre historial de ventas y modelos de respuesta a incentivos.',amb:'Adyacente'},
@@ -178,7 +203,7 @@ inn.forEach((x,k)=>{
   };
   cards.appendChild(b);
 });
- 
+
 /* ---- Demo semáforo con datos sintéticos ---- */
 const W=52,TRAIN=40,LEAKAG=2;
 const AG=[{n:'Andes Corporate',s:'Corporativa',b:420},{n:'ViajaYa OTA',s:'OTA',b:610},{n:'Tour Pampa',s:'Tour operadora',b:300},{n:'Consolidadora Sur',s:'Consolidadora',b:880},{n:'Retail Centro',s:'Retail',b:250}];
@@ -242,7 +267,7 @@ function sim(){
   document.getElementById('simnote').innerHTML=(raw>room?'<b>La ruta se llena:</b> la demanda extra supera los asientos libres, así que el resto del incentivo se paga sin traer más pasajeros. ':'')+'Supuestos ilustrativos: 180 asientos por vuelo, 7 vuelos por semana, tarifa de USD 450 y 45% de venta por agencias. El incentivo se paga sobre todos los tickets de las agencias alcanzadas, no solo sobre los incrementales.';
 }
 ['inc','dur','reach','occ','el'].forEach(id=>document.getElementById(id).oninput=sim);
- 
+
 /* ---- Red de agentes ---- */
 const AGT={gen:['IA generadora','Propone variantes de cada innovación y deja explícitos sus supuestos.','#4cc9f0'],cfo:['Agente CFO','Pregunta cuánto cuesta, cuándo se repaga y qué pasa si las agencias reaccionan menos de lo esperado.','#ff4d8d'],aud:['Agente Auditoría','Pregunta si cada pago de incentivo deja trazabilidad y pasa por las aprobaciones correspondientes.','#ff4d8d'],ag:['Agente Agencia','Se pone en el lugar de la agencia: ¿entiende el incentivo y confía en que se paga bien y a tiempo?','#ff4d8d'],an:['Agente Analista SD','Pregunta si la idea ahorra horas reales o suma una herramienta más para mantener.','#ff4d8d'],syn:['IA sintetizadora','Junta las objeciones, marca las que se repiten y ordena las propuestas por riesgo y valor.','#ffd23f'],team:['Equipo (criterio humano)','Decide qué se prioriza usando lo que la IA no tiene: conocimiento del negocio, del proveedor y de las agencias.','#3ddc97']};
 const POS={gen:[85,200],cfo:[295,55],aud:[295,145],ag:[295,235],an:[295,325],syn:[500,200],team:[675,200]};
@@ -261,4 +286,3 @@ go(0);
 </script>
 </body>
 </html>
- 
