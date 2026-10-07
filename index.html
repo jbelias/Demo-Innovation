@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Seis ideas para Sales Development · Grupo 2</title>
+<title>Doce iniciativas · Grupo 2</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=DM+Sans:wght@400;500;700&display=swap">
 <style>
 :root{--bg:#190f35;--bg2:#241650;--ink:#f6f2ff;--mute:#b9aedd;--pink:#ff4d8d;--cyan:#4cc9f0;--sun:#ffd23f;--ok:#3ddc97;--bad:#ff5252;--r:18px}
@@ -17,7 +17,7 @@ h3{font-size:1.25rem}
 p{max-width:68ch}
 button{font:inherit;cursor:pointer}
 :focus-visible{outline:3px solid var(--sun);outline-offset:3px}
-nav{position:sticky;top:0;z-index:5;display:flex;gap:.5rem;align-items:center;padding:.7rem 1rem;background:#190f35ee;backdrop-filter:blur(8px);overflow-x:auto}
+nav{position:sticky;top:0;z-index:5;display:flex;gap:.5rem;align-items:center;padding:.7rem 1rem;background:linear-gradient(90deg,var(--pink),var(--sun)) 0 100%/var(--p,0%) 3px no-repeat,#190f35ee;backdrop-filter:blur(8px);overflow-x:auto}
 .pill{border:2px solid #ffffff22;background:none;color:var(--mute);padding:.4rem .9rem;border-radius:99px;white-space:nowrap}
 .pill.on{background:var(--pink);border-color:var(--pink);color:#fff;font-weight:700}
 main{max-width:1060px;margin:0 auto;padding:2rem 1.2rem 6rem}
@@ -74,7 +74,21 @@ main{position:relative;z-index:1}
 .brand{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;color:var(--sun);margin-right:.6rem;white-space:nowrap}
 .card small{display:block;margin-top:.7rem;padding-top:.7rem;border-top:2px dashed #ffffff33}
 @media(prefers-reduced-motion:reduce){.sky{display:none}}
-@media(max-width:720px){.hero,.demo{grid-template-columns:1fr}.light{flex-direction:row;justify-self:start;border-radius:30px}.light i{width:38px;height:38px}#detail dl{grid-template-columns:1fr}}
+.pass{display:flex;align-items:center;background:linear-gradient(135deg,#f6f2ff,#cfe6ff);color:#190f35;border-radius:20px;padding:1rem 1.4rem;margin-bottom:1rem;position:relative}
+.pass::after{content:"";position:absolute;left:100px;top:10px;bottom:10px;border-left:3px dashed #190f3544}
+.gate{text-align:center;min-width:64px}.gate small{display:block;font-weight:700;letter-spacing:.1em;font-size:.7rem}.gate b{font:800 2.6rem/1 'Bricolage Grotesque',sans-serif;color:var(--pink)}
+.pinfo{padding-left:2.2rem}.pinfo h2{margin:.3rem 0 0;font-size:clamp(1.25rem,3vw,1.9rem)}.pass .tag{background:#190f3514;color:#190f35}
+.mvp{background:var(--bg2);border-radius:var(--r);padding:1.2rem;border:2px solid #ffffff1a}.info{margin-top:1rem;font-size:.95rem}.info h3{font-size:1.05rem}
+.leg{display:grid;grid-template-columns:repeat(6,1fr);gap:.5rem;position:relative;margin:.8rem 0 1.8rem}.leg::before{content:"";position:absolute;left:8%;right:8%;top:26px;border-top:3px dashed #ffffff44}
+.stop{position:relative;background:none;border:0;color:var(--ink);text-align:center;padding:.2rem}.dotn{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;margin:0 auto .4rem;font:800 1.3rem 'Bricolage Grotesque',sans-serif;color:#190f35;transition:transform .15s}.stop:hover .dotn{transform:scale(1.12)}
+.chip{background:#ffffff14;color:var(--ink);border:2px solid #ffffff22;border-radius:99px;padding:.35rem .9rem;margin:0 .4rem .4rem 0}.chip.on{background:var(--cyan);color:#190f35;border-color:var(--cyan)}
+.bar{height:14px;border-radius:7px;background:var(--cyan);transition:width .3s}.row{display:grid;grid-template-columns:110px 1fr auto;gap:.6rem;align-items:center;margin:.3rem 0;font-size:.92rem}
+.bub{padding:.6rem .9rem;border-radius:14px;margin:.4rem 0;max-width:90%}.me{background:#ffffff1c;margin-left:auto}.bot{background:#33206b}.bot code{display:block;background:#0d0820;padding:.4rem .6rem;border-radius:8px;color:var(--sun);margin:.3rem 0}
+table.t{width:100%;border-collapse:collapse;font-size:.92rem}.t td,.t th{padding:.45rem .5rem;text-align:left;border-bottom:1px solid #ffffff1a}
+.ok{color:var(--ok)}.no{color:var(--bad)}.warn{color:var(--sun)}
+input[type=text],select{background:#0d0820;color:var(--ink);border:2px solid #ffffff2a;border-radius:10px;padding:.5rem .7rem;font:inherit}
+.demo.mx{grid-template-columns:1fr 280px}#mxs circle{cursor:pointer}
+@media(max-width:720px){.demo.mx{grid-template-columns:1fr}.leg{grid-template-columns:repeat(3,1fr)}.leg::before{display:none}.pass::after{display:none}.pinfo{padding-left:1rem}.hero,.demo{grid-template-columns:1fr}.light{flex-direction:row;justify-self:start;border-radius:30px}.light i{width:38px;height:38px}#detail dl{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -89,15 +103,14 @@ main{position:relative;z-index:1}
 <div class="plane" style="top:25%;--s:44px;--d:28s;--w:-12s;opacity:.3"><div class="in"><svg viewBox="0 0 64 64"><use href="#pl"/></svg></div></div>
 <div class="plane rev" style="top:72%;--s:40px;--d:33s;--w:-18s;opacity:.26"><div class="in"><svg viewBox="0 0 64 64"><use href="#pl"/></svg></div></div>
 </div>
-<nav id="nav" aria-label="Recorrido"><span class="brand">✈ Grupo 2 - MIM OBA</span></nav>
+<nav id="nav" aria-label="Recorrido"><span class="brand">✈ Grupo 2 · Sales Development</span></nav>
 <main>
 
 <section class="step">
   <div class="hero">
     <div>
-      <h1>Seis ideas para que Sales Development llegue a tiempo</h1>
-      <p>Una aerolínea, un equipo comercial que vende a través de agencias de viajes, y demasiadas horas gastadas en Excel y pagos manuales. Este vuelo dura unos 5 minutos, pasa por dos demos que podés tocar y aterriza en una hoja de ruta.</p>
-      <h3>Bongiovanni · Cervetto · Elias · Torres</h3>
+      <h1>Doce iniciativas para una aerolínea que vende mejor</h1>
+      <p>Una aerolínea, un equipo comercial que vende a través de agencias de viajes, y demasiadas horas gastadas en Excel y pagos manuales. Este vuelo pasa por 12 puertas, seis de proceso y seis de producto, cada una con un MVP que podés tocar, y aterriza en una matriz de riesgo y una hoja de ruta.</p>
       <button class="cta" onclick="go(1)">Embarcar</button>
     </div>
     <div class="light" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -111,14 +124,14 @@ main{position:relative;z-index:1}
 </section>
 
 <section class="step" hidden>
-  <h2>Las seis innovaciones</h2>
-  <p>Tocá una para ver qué problema resuelve, qué tipo de innovación es y cómo crea o captura valor.</p>
-  <div class="cards" id="cards"></div>
-  <div id="detail" aria-live="polite"><p>Elegí una tarjeta para ver el detalle.</p></div>
+  <h2>Mapa de ruta</h2>
+  <p>Doce puertas en dos tramos. Tocá una para ir directo, o seguí el viaje con el botón "Siguiente".</p>
+  <h3>Tramo A · Innovaciones de proceso</h3><div class="leg" id="legA"></div>
+  <h3>Tramo B · Innovaciones de producto</h3><div class="leg" id="legB"></div>
 </section>
+<div id="host"></div>
 
-<section class="step" hidden>
-  <h2>Demo: el semáforo de fuga de agencias</h2>
+<div id="tplSem" hidden>
   <p>Cada agencia tiene un ritmo normal de ventas, con su estacionalidad. El modelo compara las últimas 4 semanas contra lo esperado y enciende la luz cuando la caída es demasiado grande para ser ruido. Los datos son <b>sintéticos</b>, generados para esta demo.</p>
   <div class="ctrl">
     <label>Fuga de Tour Pampa: <b id="leakv">12%</b> <input id="leak" type="range" min="0" max="30" value="12" aria-label="Porcentaje de fuga"></label>
@@ -128,10 +141,9 @@ main{position:relative;z-index:1}
     <div id="list"></div>
     <div><svg id="chart" viewBox="0 0 700 280" role="img" aria-label="Ventas semanales contra lo esperado"></svg><div class="out" id="read"></div></div>
   </div>
-</section>
+</div>
 
-<section class="step" hidden>
-  <h2>Demo: simulador de escenarios de incentivos</h2>
+<div id="tplSim" hidden>
   <p>Mové los sliders y mirá cómo cambian tickets incrementales, costo y retorno de un incentivo en una ruta con baja ocupación. Es un modelo <b>ilustrativo</b> con rendimientos decrecientes: más incentivo no siempre rinde más.</p>
   <div class="sl">
     <label>Incentivo por ticket: <b id="incv"></b><input id="inc" type="range" min="1" max="10" value="4"></label>
@@ -142,7 +154,7 @@ main{position:relative;z-index:1}
   </div>
   <div class="kpis" id="kpis"></div>
   <p class="out" style="max-width:none" id="simnote"></p>
-</section>
+</div>
 
 <section class="step" hidden>
   <h2>Red team con agentes</h2>
@@ -164,45 +176,79 @@ main{position:relative;z-index:1}
 </main>
 
 <script>
-const names=['Embarque','Las seis ideas','Semáforo','Simulador','Red team','Aterrizaje'],N=names.length;
-const nav=document.getElementById('nav');
-names.forEach((n,i)=>{const b=document.createElement('button');b.className='pill';b.textContent=n;b.onclick=()=>go(i);nav.appendChild(b)});
+const $=id=>document.getElementById(id),S=(id,h)=>$(id).innerHTML=h,F=n=>'USD '+Math.round(n).toLocaleString('es-AR');
+const INI=[
+['P','Clusterización','Clusterización automática de agencias y recomendador de incentivos','Es difícil saber qué segmento atiende cada agencia: muchas combinan segmentos o cambian de negocio y la base de ventas no lo refleja. La clusterización queda desactualizada y el incentivo no responde como se espera.','Un modelo de recomendación analiza el perfil histórico de ventas de cada agencia y sugiere el mix óptimo: qué incentivo la motivará más para empujar una ruta con baja ocupación.','Incentivos alineados con lo que cada agencia realmente vende.'],
+['P','SabreGPT','SabreGPT: asistente conversacional para Sabre','La versión nativa de Sabre se maneja con comandos alfanuméricos en inglés que llevan años de uso. Las capacitaciones no alcanzan y las IAs conversacionales tradicionales responden mal sobre Sabre.','Un chatbot con el manual de Sabre cargado en un RAG, con temperatura baja, que devuelve el comando y la fuente exacta (página o sección) para validarlo rápido.','Agiliza la tarea de los analistas y reduce las alucinaciones.'],
+['P','Simulador','Simulador predictivo de escenarios comerciales','Para lanzar un incentivo, los analistas proyectan escenarios a mano en muchas hojas de Excel, con resultados imprecisos.','Herramienta interactiva con Machine Learning y modelos de elasticidad que estima en tiempo real el volumen incremental de tickets, el costo proyectado y el ROI.','Escenarios más precisos y rápidos antes de gastar en un incentivo.'],
+['P','Pagos','Automatización inteligente de pagos de comisiones','Calcular, validar y pagar incentivos junto con Finanzas es manual, lento y propenso a discrepancias, bajo normas de auditoría.','Conciliación automática que cruza contratos con reportes de ventas, detecta errores antes de liquidar, consigue aprobaciones y genera las órdenes de pago.','Menos tiempo administrativo, sin errores humanos, pagos ágiles y transparentes y mejor relación con el canal.'],
+['P','Semáforo','Semáforo de pérdida de ventas en agencias','La fuga de una agencia hacia la competencia se detecta cuando el daño ya está hecho: los reportes de IATA tienen dos semanas de delay.','Modelo de Machine Learning sobre series temporales que aprende el comportamiento normal de cada agencia y emite alertas tipo semáforo ante caídas sutiles.','Intervenir a tiempo con incentivos tácticos o reuniones comerciales.'],
+['P','Validador','Validador de itinerarios y conexiones','El proveedor de pagos automáticos falla con rutas con escalas (por ejemplo Miami con escala en Lima) y los analistas revisan a mano los reclamos de las agencias.','Un validador analiza el itinerario completo y la secuencia de cupones para distinguir una conexión de un stopover y corregir la lectura del sistema.','El incentivo se reconoce y se paga sin intervención humana ni reclamos.'],
+['D','Reserva Extendida','Reserva Extendida','La aerolínea ofrece un máximo de 3 días para reservar. Pasado ese tiempo la reserva se da de baja y una nueva queda sujeta a un cambio de cotización.','La agencia paga un fee para mantener la reserva activa y congelar la tarifa por 7 días.','Ventaja competitiva frente a aerolíneas que no lo ofrecen; la agencia gana tiempo para esperar a su cliente o armar un paquete con hotel y traslados.'],
+['D','Pack de servicios','Pre-compra de pack de servicios adicionales','Los servicios adicionales se contratan por separado, a una tarifa menos conveniente, y nada incentiva a la agencia a concentrar su emisión.','La agencia compra por adelantado un pack (por ejemplo 200 equipajes extra, 50 asientos, 20 embarques prioritarios y 20 accesos VIP) a una tarifa más conveniente y lo distribuye entre sus pasajeros del mes.','A la agencia le conviene emitir con esta aerolínea para usar lo ya pagado, lo que aumenta la participación de mercado.'],
+['D','Cuponera','Cuponera Corporativa','Las empresas pagan precios variables por cada viaje corporativo y no pueden congelar el costo.','Se vende a empresas (no agencias) una cuponera de, por ejemplo, 100 tramos a un destino, a precio fijo y con plazo. La empresa los asigna a sus empleados dentro de las condiciones de la aerolínea, como restringir fines de semana largos.','La empresa congela el precio y elige fecha y pasajero; la aerolínea gana fidelidad corporativa y market share.'],
+['D','Disputa tarifaria','Disputa tarifaria','Si una agencia encuentra un vuelo similar de otra compañía a menor precio, hoy no tiene cómo pedir que se iguale.','Un botón en el portal B2B donde la agencia disputa la tarifa. Con parámetros configurados (por ejemplo vuelo poco lleno o competidor de interés) el sistema decide si iguala. No tiene cargo ni garantiza el precio.','Aunque puede afectar ingresos, aumenta la ocupación de los vuelos y mejora la participación de mercado.'],
+['D','Wi-Fi Prepago','Wi-Fi Prepago','Los empleados que viajan por trabajo deben contratar el Wi-Fi a bordo en cada vuelo.','La empresa compra un paquete de datos mensual para que sus empleados se conecten en los vuelos, cada uno con usuario y clave corporativa, y puede seguir el uso del servicio.','Los empleados trabajan a bordo sin contratar el servicio cada vez, y la empresa controla el consumo.'],
+['D','Seguro de meta','Seguro por no llegar a la meta de venta','El incentivo trimestral de las principales agencias depende de cumplir metas, y hay trimestres en que no se alcanzan.','Una vez al año la agencia puede contratar un seguro: si en un trimestre queda hasta un 10% por debajo de la meta, igualmente recibe el incentivo completo.','Protege a la agencia ante trimestres flojos y fortalece la relación comercial.']];
+const host=$('host');
+INI.forEach((x,i)=>{const n=i+1,pr=x[0]==='P',e=document.createElement('section');e.className='step';e.id='i'+n;e.hidden=true;
+ e.innerHTML=`<div class="pass"><div class="gate"><small>PUERTA</small><b>${n}</b></div><div class="pinfo"><span class="tag">${pr?'Tramo A · Proceso':'Tramo B · Producto'}</span><span class="tag">Vuelo SD-${100+n}</span><h2>${x[2]}</h2></div></div><div class="mvp"><span class="tag">MVP interactivo</span><div id="m${n}"></div></div><div class="grid2 info"><div class="box pink"><h3>Problema</h3><p>${x[3]}</p></div><div class="box cyan"><h3>Solución</h3><p>${x[4]}</p></div><div class="box"><h3>Impacto</h3><p>${x[5]}</p></div></div>`;
+ host.appendChild(e);
+ const st=document.createElement('button');st.className='stop';st.onclick=()=>go(n+1);st.innerHTML=`<span class="dotn" style="background:${pr?'var(--pink)':'var(--cyan)'}">${n}</span><small>${x[1]}</small>`;$(pr?'legA':'legB').appendChild(st)});
+const M={};
+M[1]=()=>{const A=[['Horizonte Viajes','Retail',{Retail:25,Corporativa:10,OTA:55,'Tour operadora':10}],['Andes Corporate','Corporativa',{Corporativa:70,Retail:20,OTA:10}],['Mundo Grupos','Retail',{'Tour operadora':60,Retail:30,Consolidadora:10}],['Sur Global','Consolidadora',{Consolidadora:50,Retail:25,Corporativa:25}]];
+ const INC={Retail:'descuento por temporada',Corporativa:'bono por viajeros frecuentes',OTA:'comisión escalonada por volumen online','Tour operadora':'incentivo por bloqueo de grupos',Consolidadora:'override por volumen consolidado'};
+ S('m1','<p>Elegí una agencia para ver su perfil histórico de ventas (datos de ejemplo).</p><div id="m1b"></div><div id="m1x"></div>');
+ A.forEach((a,k)=>{const b=document.createElement('button');b.className='chip';b.textContent=a[0];b.onclick=()=>{[...$('m1b').children].forEach(c=>c.classList.remove('on'));b.classList.add('on');const mix=a[2],top=Object.keys(mix).sort((u,v)=>mix[v]-mix[u])[0];
+  S('m1x',`<p>Segmento asignado en la base: <b>${a[1]}</b></p>`+Object.keys(mix).map(g=>`<div class="row"><span>${g}</span><div class="bar" style="width:${mix[g]}%"></div><span>${mix[g]}%</span></div>`).join('')+`<p class="out" style="max-width:none">${top===a[1]?'<span class="ok">✔ El segmento asignado coincide con el perfil real.</span>':'<span class="warn">⚠ Clusterización desactualizada: el perfil de ventas indica <b>'+top+'</b>.</span>'}<br>Incentivo recomendado para empujar una ruta con baja ocupación: <b>${INC[top]}</b> (ejemplo ilustrativo).</p>`)};$('m1b').appendChild(b)});$('m1b').firstChild.click()};
+M[2]=()=>{const Q={reg:['Reglas de una tarifa','FN 1','Manual Sabre · pág. 231 · Reglas tarifarias',['regla','condicion','condición']],des:['Descuentos cargados','FQ EZEMIA/‹código›','Manual Sabre · pág. 246 · Descuentos',['descuento']],tar:['Tarifas de una ruta','FQ EZEMIA','Manual Sabre · pág. 214 · Consulta de tarifas',['tarifa','precio']]};
+ S('m2','<span class="tag">Temperatura 0.0</span><span class="tag">Fuente obligatoria</span><div id="chat"></div><div class="ctrl"><input type="text" id="q2" placeholder="Preguntá qué comando usar…" style="flex:1;min-width:200px"><button class="cta" id="b2">Preguntar</button></div><div id="qs"></div><p><small>Contenido de ejemplo: comandos y páginas ilustrativos, no son del manual real.</small></p>');
+ const ask=t=>{if(!t.trim())return;const l=t.toLowerCase(),k=Object.keys(Q).find(k=>Q[k][3].some(w=>l.includes(w)));$('chat').innerHTML+=`<div class="bub me">${t}</div><div class="bub bot">${k?`Comando sugerido: <code>${Q[k][1]}</code><small>${Q[k][2]}</small>`:'No encontré eso en el manual, así que no voy a inventar un comando. Probá reformular la consulta.'}</div>`;$('q2').value=''};
+ $('b2').onclick=()=>ask($('q2').value);$('q2').onkeydown=e=>{if(e.key==='Enter')ask($('q2').value)};
+ [['¿Cómo veo las tarifas de EZE a MIA?'],['¿Qué reglas tiene una tarifa?'],['¿Cómo consulto los descuentos cargados?'],['¿Cómo cancelo un vuelo?']].forEach(q=>{const b=document.createElement('button');b.className='chip';b.textContent=q[0];b.onclick=()=>ask(q[0]);$('qs').appendChild(b)})};
+M[4]=()=>{const O=[['Horizonte Viajes',120000,3,3600],['Andes Corporate',210000,4,8400],['Mundo Grupos',95000,5,5200],['Sur Global',310000,2,6600],['Retail Centro',64000,3,1920]];let R=O.map(r=>[...r]),st=0;const L=['Validar liquidaciones','Corregir errores','Aprobar (Finanzas) y generar órdenes','Reiniciar'];
+ const dr=()=>{S('m4',`<table class="t"><tr><th>Agencia</th><th>Ventas</th><th>Contrato</th><th>Calculado</th><th>Estado</th></tr>${R.map((r,i)=>{const e=r[1]*r[2]/100,bad=Math.abs(e-r[3])>1;return `<tr><td>${r[0]}</td><td>${F(r[1])}</td><td>${r[2]}%</td><td>${F(r[3])}</td><td>${st===0?'—':st===3?`<span class="ok">Orden OP-${2041+i}</span>`:bad?`<span class="no">⚠ debería ser ${F(e)}</span>`:'<span class="ok">✔ ok</span>'}</td></tr>`}).join('')}</table><div class="ctrl"><button class="cta" id="b4">${L[st]}</button></div>`);
+  $('b4').onclick=()=>{if(st===1)R.forEach(r=>r[3]=r[1]*r[2]/100);st=st===3?0:st+1;if(st===0)R=O.map(r=>[...r]);dr()}};dr()};
+M[6]=()=>{S('m6','<div class="ctrl"><label>Escala <select id="e6"><option>Lima (LIM)</option><option>Santiago (SCL)</option><option>Bogotá (BOG)</option></select></label><label>Tiempo en la escala: <b id="h6v"></b> <input id="h6" type="range" min="1" max="120" value="3"></label></div><div id="o6"></div>');
+ const u=()=>{const h=+$('h6').value,c=$('e6').value.split(' ')[0],st=h>24;$('h6v').textContent=h+' h';$('o6').innerHTML=`<p>Itinerario: EZE → <b>${c}</b> → MIA · incentivo vigente: vuelo a Miami</p><div class="grid2"><div class="box pink"><h3>Sistema actual</h3><p class="no">Puede leerlo como destino final o separar el tramo, y no reconoce el incentivo (reclamo de la agencia).</p></div><div class="box cyan"><h3>Validador</h3><p><b>${st?'Stopover':'Conexión'}</b> (${h} h en la escala; umbral ilustrativo de 24 h).<br>${st?'Registra la escala con estadía y la evalúa con la regla de stopover.':'<span class="ok">Incentivo a Miami reconocido y pagado sin intervención.</span>'}</p></div></div>`};$('h6').oninput=$('e6').onchange=u;u()};
+M[7]=()=>{S('m7','<label>Días desde la reserva: <b id="d7v"></b> <input id="d7" type="range" min="0" max="8" value="0"></label><div class="grid2" id="o7" style="margin-top:1rem"></div><p><small>Tarifas y fee de ejemplo.</small></p>');
+ const u=()=>{const d=+$('d7').value;$('d7v').textContent=d;$('o7').innerHTML=`<div class="box pink"><h3>Reserva estándar</h3><p>${d<=3?`<span class="ok">Activa</span> · vence en ${3-d} día(s)`:'<span class="no">Dada de baja</span> · una nueva reserva está sujeta a cambio de cotización: <b>USD 870</b>'}</p></div><div class="box cyan"><h3>Reserva Extendida (fee USD 15)</h3><p>${d<=7?`<span class="ok">Activa</span> · tarifa congelada en <b>USD 820</b> · vence en ${7-d} día(s)`:'<span class="no">Vencida</span>'}</p></div>`};$('d7').oninput=u;u()};
+M[8]=()=>{const P=[['Equipaje extra',200,40],['Selección de asiento',50,15],['Embarque prioritario',20,10],['Acceso VIP',20,35]];
+ S('m8','<div class="sl">'+P.map((p,i)=>`<label>${p[0]}: <b id="p8v${i}"></b><input id="p8${i}" type="range" min="0" max="${p[1]*2}" value="${p[1]}"></label>`).join('')+'</div><div class="kpis" id="o8"></div><p><small>Precios y descuento (18%) de ejemplo.</small></p>');
+ const u=()=>{let t=0;P.forEach((p,i)=>{const q=+$('p8'+i).value;$('p8v'+i).textContent=q;t+=q*p[2]});const k=t*.82;$('o8').innerHTML=`<div class="kpi"><b>${F(t)}</b><span>comprado por separado</span></div><div class="kpi"><b>${F(k)}</b><span>pack pre-comprado</span></div><div class="kpi"><b class="ok">${F(t-k)}</b><span>ahorro de la agencia</span></div>`};P.forEach((_,i)=>$('p8'+i).oninput=u);u()};
+M[9]=()=>{let left=100;S('m9','<div class="kpis"><div class="kpi"><b id="l9">100</b><span>tramos disponibles</span></div><div class="kpi"><b>USD 400</b><span>precio fijo por tramo (ejemplo)</span></div></div><div class="ctrl"><select id="e9"><option>Ana</option><option>Bruno</option><option>Carla</option><option>Diego</option></select><select id="f9"><option>Mar 11 nov</option><option>Jue 13 nov</option><option>Vie 20 nov (fin de semana largo)</option></select><button class="cta" id="a9">Asignar tramo</button></div><div id="g9"></div>');
+ $('a9').onclick=()=>{const f=$('f9').value,bad=f.includes('largo');if(!bad)left--;$('l9').textContent=left;$('g9').innerHTML=`<p class="${bad?'no':'ok'}">${bad?'✖ Rechazado':'✔ Asignado'}: ${$('e9').value} · ${f}${bad?'. La cuponera restringe fines de semana largos.':''}</p>`+$('g9').innerHTML}};
+M[10]=()=>{S('m10','<div class="sl"><label>Nuestra tarifa: <b id="n10v"></b><input id="n10" type="range" min="500" max="1200" step="10" value="820"></label><label>Tarifa del competidor: <b id="c10v"></b><input id="c10" type="range" min="400" max="1200" step="10" value="740"></label><label>Ocupación del vuelo: <b id="o10v"></b><input id="o10" type="range" min="30" max="100" value="62"></label><label><input type="checkbox" id="k10" checked> Competidor que nos interesa</label></div><button class="cta" id="d10">Disputar tarifa</button><div id="r10" class="out"></div><p><small>Parámetros de ejemplo: ocupación menor a 80% y diferencia menor a 20%. Sin cargo y sin garantía de confirmar el precio.</small></p>');
+ const lb=()=>{$('n10v').textContent=F($('n10').value);$('c10v').textContent=F($('c10').value);$('o10v').textContent=$('o10').value+'%'};['n10','c10','o10'].forEach(i=>$(i).oninput=lb);lb();
+ $('d10').onclick=()=>{const n=+$('n10').value,c=+$('c10').value,o=+$('o10').value,d=(n-c)/n*100,R=[['Vuelo no muy lleno (<80%)',o<80],['Competidor de interés',$('k10').checked],['Competidor más barato por menos del 20%',d>0&&d<20]],ok=R.every(r=>r[1]);
+  S('r10',R.map(r=>`<div class="${r[1]?'ok':'no'}">${r[1]?'✔':'✖'} ${r[0]}</div>`).join('')+`<p><b class="${ok?'ok':'no'}">${ok?'Elegible: se iguala la tarifa a '+F(c):'No elegible: se mantiene '+F(n)}</b></p>`)}};
+M[11]=()=>{const E=[['Laura',0],['Marcos',0],['Sofía',0],['Tomás',0]],T=50;const u=()=>{const t=E.reduce((a,e)=>a+e[1],0);S('m11',`<span class="tag">Usuario y clave corporativa</span><p>Paquete mensual de la empresa: <b>${T} GB</b> · usado: <b>${t.toFixed(1)} GB</b></p><div class="bar" style="width:${Math.min(100,t/T*100)}%;background:var(--pink)"></div><p>Consumo por empleado (tocá "vuelo" para simular un viaje):</p>`+E.map((e,i)=>`<div class="row"><span>${e[0]}</span><div class="bar" style="width:${Math.min(100,e[1]*10)}%"></div><button class="chip" onclick="wf(${i})">✈ vuelo · ${e[1].toFixed(1)} GB</button></div>`).join('')+'<button class="ghost" onclick="wf(-1)">Reiniciar</button>')};
+ window.wf=i=>{if(i<0)E.forEach(e=>e[1]=0);else E[i][1]+=.5+Math.random()*2;u()};u()};
+M[12]=()=>{S('m12','<label><input type="checkbox" id="s12" checked> Seguro contratado (1 de enero)</label><div class="sl">'+[1,2,3,4].map(q=>`<label>Q${q} · cumplimiento de la meta: <b id="q12v${q}"></b><input id="q12${q}" type="range" min="70" max="110" value="${[104,96,88,93][q-1]}"></label>`).join('')+'</div><div id="o12"></div><p><small>Incentivo trimestral de ejemplo: USD 5.000.</small></p>');
+ const u=()=>{let t=0,r='';for(let q=1;q<=4;q++){const c=+$('q12'+q).value,sg=$('s12').checked;$('q12v'+q).textContent=c+'%';const f=c>=100,cv=sg&&c>=90&&c<100,pay=f||cv;t+=pay?5000:0;r+=`<tr><td>Q${q}</td><td>${c}%</td><td>${f?'<span class="ok">Meta cumplida</span>':cv?'<span class="warn">Cubierto por el seguro</span>':'<span class="no">Sin incentivo</span>'}</td><td>${pay?'USD 5.000':'USD 0'}</td></tr>`}$('o12').innerHTML=`<table class="t"><tr><th>Trimestre</th><th>Cumplimiento</th><th>Resultado</th><th>Incentivo</th></tr>${r}</table><p>Total cobrado en el año: <b>${F(t)}</b></p>`};
+ ['q121','q122','q123','q124','s12'].forEach(i=>$(i).oninput=$(i).onchange=u);u()};
+$('m3').append(...$('tplSim').childNodes);$('m5').append(...$('tplSem').childNodes);
+[1,2,4,6,7,8,9,10,11,12].forEach(n=>M[n]());
+/* matriz */
+const SC=[[4,6],[2,5],[4,5],[6,8],[5,6],[4,7],[3,7],[4,6],[5,7],[7,8],[3,4],[8,6]];let ms=0;
+const mxs=document.createElement('section');mxs.className='step';mxs.id='mx';mxs.hidden=true;
+mxs.innerHTML='<h2>Matriz de riesgo y reputación</h2><p>Portafolio de 6 innovaciones de proceso (rosa) y 6 de producto (celeste). Riesgo: qué tanto puede salir mal (técnico, financiero u operativo). Reputación: impacto en la relación con agencias y clientes. Elegí una iniciativa y ajustá su posición en vivo.</p><div class="demo mx"><svg id="mxs" viewBox="0 0 520 420" style="width:100%;height:auto;background:#0d0820;border-radius:18px" role="img" aria-label="Matriz de riesgo y reputación"></svg><div id="mxc" class="out" style="margin:0"></div></div>';host.appendChild(mxs);
+function mxd(){const X=r=>50+(r-1)/9*450,Y=p=>370-(p-1)/9*350;let g='<line x1="50" y1="370" x2="500" y2="370" stroke="#ffffff55"/><line x1="50" y1="20" x2="50" y2="370" stroke="#ffffff55"/><line x1="275" y1="20" x2="275" y2="370" stroke="#ffffff22" stroke-dasharray="4 4"/><line x1="50" y1="195" x2="500" y2="195" stroke="#ffffff22" stroke-dasharray="4 4"/><g fill="#b9aedd" font-size="11"><text x="58" y="34">Alta reputación · bajo riesgo</text><text x="494" y="34" text-anchor="end">Alta reputación · alto riesgo</text><text x="58" y="364">Baja reputación · bajo riesgo</text><text x="494" y="364" text-anchor="end">Baja reputación · alto riesgo</text><text x="275" y="395" text-anchor="middle" font-size="13">Riesgo →</text><text transform="rotate(-90 16 195)" x="16" y="195" text-anchor="middle" font-size="13">Reputación →</text></g>';
+ SC.forEach((c,i)=>{const pr=INI[i][0]==='P';g+=`<g onclick="mxp(${i})"><circle cx="${X(c[0])}" cy="${Y(c[1])}" r="15" fill="${pr?'#ff4d8d':'#4cc9f0'}" stroke="${i===ms?'#fff':'none'}" stroke-width="3"/><text x="${X(c[0])}" y="${Y(c[1])+5}" text-anchor="middle" font-size="13" font-weight="700" fill="#190f35" style="pointer-events:none">${i+1}</text></g>`});$('mxs').innerHTML=g;
+ $('mxc').innerHTML=`<b>${ms+1} · ${INI[ms][2]}</b><br><label>Riesgo: <b>${SC[ms][0]}</b><input type="range" min="1" max="10" value="${SC[ms][0]}" oninput="SC[ms][0]=+this.value;mxd()"></label><br><label>Reputación: <b>${SC[ms][1]}</b><input type="range" min="1" max="10" value="${SC[ms][1]}" oninput="SC[ms][1]=+this.value;mxd()"></label><small>Posiciones iniciales de partida para la discusión.</small>`}
+function mxp(i){ms=i;mxd()}
+/* viaje */
+const steps=[...document.querySelectorAll('.step')],N=steps.length;steps[N-2].id='rt';steps[N-1].id='fin';
+const lab=['Embarque','Mapa de ruta',...INI.map((x,i)=>i+1),'Matriz','Red team','Destino final'],hooks={i3:()=>sim(),i5:()=>draw(),mx:mxd},nav=$('nav'),prev=$('prev'),next=$('next');
+lab.forEach((l,i)=>{const b=document.createElement('button');b.className='pill';b.title=i>1&&i<14?INI[i-2][2]:l;b.onclick=()=>go(i);nav.appendChild(b)});
 let cur=0;
-function go(n){
-  cur=(n+N)%N;
-  document.querySelectorAll('.step').forEach((s,i)=>s.hidden=i!==cur);
-  document.querySelectorAll('.pill').forEach((p,i)=>p.classList.toggle('on',i===cur));
-  prev.disabled=cur===0;
-  next.textContent=cur===N-1?'Volver al inicio':'Siguiente →';
-  next.onclick=()=>go(cur===N-1?0:cur+1);
-  window.scrollTo(0,0);
-  if(cur===2)draw();
-  if(cur===3)sim();
-}
-const prev=document.getElementById('prev'),next=document.getElementById('next');
+const nl=()=>cur===N-1?'Volver al inicio':cur===0?'Ver el mapa →':cur<=12?`Puerta ${cur} →`:cur===13?'Matriz de riesgo →':cur===14?'Red team →':'Destino final →';
+function go(n){cur=(n+N)%N;steps.forEach((s,i)=>s.hidden=i!==cur);window.scrollTo(0,0);
+ nav.querySelectorAll('.pill').forEach((p,i)=>{const on=i===cur;p.classList.toggle('on',on);p.textContent=on&&i>1&&i<14?`${i-1} · ${INI[i-2][1]}`:lab[i];if(on)p.scrollIntoView({inline:'center',block:'nearest'})});
+ prev.disabled=cur===0;next.textContent=nl();next.onclick=()=>go(cur===N-1?0:cur+1);nav.style.setProperty('--p',cur/(N-1)*100+'%');
+ const f=hooks[steps[cur].id];f&&f()}
 prev.onclick=()=>go(cur-1);
-document.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT')return;if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft'&&cur>0)go(cur-1)});
-
-/* ---- Mapa de innovaciones (clasificación propuesta, ajustable) ---- */
-const inn=[
-{i:'🧩',t:'Clusterización de agencias y recomendador de incentivos',p:'Las agencias cambian de negocio y la base no lo refleja; el incentivo deja de responder.',s:'Un modelo lee el perfil histórico de ventas, detecta el segmento real y sugiere el incentivo que más motiva a cada agencia.',tipo:'Proceso + marketing (nuevo método de incentivos)',val:'Baja el costo comercial: cada incentivo llega a quien responde.',gap:'Clustering sobre historial de ventas y modelos de respuesta a incentivos.',amb:'Adyacente'},
-{i:'💬',t:'SabreGPT',p:'Los comandos de Sabre se aprenden en años y los chatbots genéricos fallan con ellos.',s:'Chatbot con RAG sobre el manual de Sabre, temperatura baja, que devuelve el comando y la página o sección de origen.',tipo:'Proceso + organizacional (conocimiento accesible)',val:'Baja el costo de tiempo del analista y acorta la curva de aprendizaje.',gap:'RAG sobre documentación técnica con trazabilidad de la fuente.',amb:'Núcleo'},
-{i:'🎛️',t:'Simulador predictivo de escenarios comerciales',p:'Las proyecciones de un incentivo se arman a mano en muchas hojas de Excel y salen imprecisas.',s:'Herramienta interactiva con modelos de elasticidad que estima tickets incrementales, costo proyectado y ROI en tiempo real.',tipo:'Proceso + marketing (tarificación e incentivos)',val:'Mejora el retorno de cada incentivo antes de gastarlo.',gap:'Modelos de elasticidad por agencia, con estacionalidad y costos.',amb:'Adyacente'},
-{i:'🧾',t:'Conciliación automática de pagos de comisiones',p:'Calcular, validar y pagar incentivos es manual, lento y propenso a discrepancias.',s:'Sistema que cruza contratos y reportes de ventas, detecta errores de cálculo, gestiona aprobaciones y genera las órdenes de pago.',tipo:'Proceso (con cambio organizacional)',val:'Baja el costo operativo y sube la confianza de las agencias.',gap:'Reglas de validación, flujo de aprobaciones y trazabilidad de auditoría.',amb:'Núcleo'},
-{i:'🚦',t:'Semáforo de pérdida de ventas en agencias',p:'La fuga hacia la competencia se ve en IATA cuando ya pasaron semanas.',s:'Modelo de series temporales que aprende el ritmo normal de cada agencia y alerta ante caídas sutiles, ajustadas por estacionalidad.',tipo:'Proceso + marketing (retención proactiva)',val:'Captura valor al retener volumen antes de perderlo.',gap:'Detección de anomalías sobre datos propios, sin esperar al reporte externo.',amb:'Adyacente'},
-{i:'✈️',t:'Validador de itinerarios y conexiones',p:'El proveedor de pagos automáticos confunde escalas con destinos y rechaza incentivos que sí corresponden.',s:'Validador que analiza el itinerario y la secuencia de cupones para distinguir conexión de stopover y corregir la lectura del sistema.',tipo:'Proceso (componente de un sistema existente)',val:'Reduce reclamos y revisiones manuales; mejora la relación con las agencias.',gap:'Reglas de itinerario y datos de cupones de los tickets emitidos.',amb:'Núcleo'}
-];
-const cards=document.getElementById('cards'),detail=document.getElementById('detail');
-inn.forEach((x,k)=>{
-  const b=document.createElement('button');b.className='card';b.setAttribute('aria-pressed','false');
-  b.innerHTML=`<span class="ico">${x.i}</span><b>${x.t}</b><small>${x.tipo}</small>`;
-  b.onclick=()=>{
-    cards.querySelectorAll('.card').forEach(c=>c.setAttribute('aria-pressed','false'));
-    b.setAttribute('aria-pressed','true');
-    detail.innerHTML=`<h3>${x.i} ${x.t}</h3><span class="tag">Cuadrante 2: Transformación operacional</span><span class="tag">Ambición: ${x.amb}</span><dl><dt>Problema</dt><dd>${x.p}</dd><dt>Solución</dt><dd>${x.s}</dd><dt>Tipo</dt><dd>${x.tipo}</dd><dt>Valor</dt><dd>${x.val}</dd><dt>Capacidad clave</dt><dd>${x.gap}</dd></dl>`;
-  };
-  cards.appendChild(b);
-});
+document.addEventListener('keydown',e=>{if(['INPUT','SELECT'].includes(e.target.tagName))return;if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft'&&cur>0)go(cur-1)});
 
 /* ---- Demo semáforo con datos sintéticos ---- */
 const W=52,TRAIN=40,LEAKAG=2;
@@ -251,7 +297,7 @@ function draw(){
   document.getElementById('chart').innerHTML=s;
   document.getElementById('read').innerHTML=`<b>${AG[sel].n}</b> (${AG[sel].s}): ${d.alert>=0?`el semáforo se enciende en la <b>semana ${d.alert+1}</b>. El reporte IATA recién lo mostraría alrededor de la semana ${d.alert+3}, así que el equipo ganaría unas dos semanas para actuar.`:'ventas dentro del rango esperado; el semáforo sigue en verde.'} La línea punteada es lo esperado según su estacionalidad y la franja cubre el rango normal.`;
 }
-document.getElementById('leak').oninput=e=>{document.getElementById('leakv').textContent=e.target.value+'%';if(cur===2)draw()};
+document.getElementById('leak').oninput=e=>{document.getElementById('leakv').textContent=e.target.value+'%';if(steps[cur].id==='i5')draw()};
 document.getElementById('reroll').onclick=()=>{seed=Math.floor(Math.random()*1e6);draw()};
 /* ---- Simulador ---- */
 function sim(){
